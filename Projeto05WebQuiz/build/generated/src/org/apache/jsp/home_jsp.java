@@ -4,6 +4,8 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import com.projeto05.quiz.Quiz;
+import com.projeto05.quiz.Users;
+import java.util.ArrayList;
 
 public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -42,31 +44,45 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Índice: WebQuiz</title>\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
-      out.write("        <h1>WebQuiz</h1>\n");
-      out.write("        <h2>Resultados</h2>\n");
-      out.write("        <hr/>\n");
-      out.write("        <h3>Nome:</h3>\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+ArrayList<Users> user = Quiz.getUser(); 
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <title>Índice: WebQuiz</title>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
+      out.write("        <h1>WebQuiz</h1>\r\n");
+      out.write("        <h2>Resultados</h2>\r\n");
+      out.write("        <hr/>\r\n");
+      out.write("        <h3>Nome:</h3>\r\n");
       out.write("        ");
-      out.write("\n");
-      out.write("        <h3>Média</h3>\n");
+      out.print( user.get(0).getName() );
+      out.write("\r\n");
       out.write("        ");
-      out.write("\n");
-      out.write("        <hr/>\n");
-      out.write("        <a href=\"teste.jsp\">\n");
-      out.write("            <button>Iniciar Teste</button>\n");
-      out.write("        </a>\n");
-      out.write("    </body>\n");
+      out.write("\r\n");
+      out.write("        <h3>Média</h3>\r\n");
+      out.write("        <h3>Última nota:</h3>\r\n");
+      out.write("        ");
+      out.print( 100.0*user.get(0).getUserLastGrade() );
+      out.write("%\r\n");
+      out.write("        <h3>Média</h3>\r\n");
+      out.write("        ");
+      out.print( 100.0*user.get(0).getUserGradeAverage() );
+      out.write("%\r\n");
+      out.write("        <hr/>\r\n");
+      out.write("        ");
+      out.write("\r\n");
+      out.write("        <hr/>\r\n");
+      out.write("        <a href=\"teste.jsp\">\r\n");
+      out.write("            <button>Iniciar Teste</button>\r\n");
+      out.write("        </a>\r\n");
+      out.write("    </body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

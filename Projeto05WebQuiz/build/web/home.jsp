@@ -1,11 +1,8 @@
-<%-- 
-    Document   : home
-    Created on : 12/11/2016, 14:43:50
-    Author     : marce
---%>
-
 <%@page import="com.projeto05.quiz.Quiz"%>
+<%@page import="com.projeto05.quiz.Users"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%ArrayList<Users> user = Quiz.getUser(); %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,8 +14,14 @@
         <h2>Resultados</h2>
         <hr/>
         <h3>Nome:</h3>
+        <%= user.get(0).getName() %>
         <%-- criar lista com os nomes de quem respondeu --%>
         <h3>Média</h3>
+        <h3>Última nota:</h3>
+        <%= 100.0*user.get(0).getUserLastGrade() %>%
+        <h3>Média</h3>
+        <%= 100.0*user.get(0).getUserGradeAverage() %>%
+        <hr/>
         <%-- criar media do aluno --%>
         <hr/>
         <a href="teste.jsp">
