@@ -2,6 +2,7 @@
 package com.projeto05.quiz;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Quiz {
     private static int testsCount = 0;
