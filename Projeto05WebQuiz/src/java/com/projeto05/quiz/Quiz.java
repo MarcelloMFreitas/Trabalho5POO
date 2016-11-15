@@ -46,6 +46,7 @@ public class Quiz {
             ("10.Uma usina produz 500 litros de álcool com 6 000 kg de cana – de – açúcar. Determine quantos litros de álcool são produzidos com 15 000 kg de cana. ", "1250", new String[]{"3100","2125","1250"});
             teste.add(q10);
         }
+        Collections.shuffle(teste);
         return teste;
     }
     
