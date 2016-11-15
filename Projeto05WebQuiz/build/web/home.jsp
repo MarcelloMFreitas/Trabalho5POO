@@ -12,9 +12,7 @@
     <body>
         <h1> Praticando Regra de Três Simples</h1>
         <h2>Regra de três simples é um processo prático para resolver problemas que envolvam quatro valores dos quais conhecemos três deles. </h2>
-        
         <h2>Devemos, portanto, determinar um valor a partir dos três já conhecidos.</h2>
-         
         <h2>Passos utilizados numa regra de três simples:</h2>
         <h2> 1º) Construir uma tabela, agrupando as grandezas da mesma espécie em colunas</h2>
         <h2>e mantendo na mesma linha as grandezas de espécies diferentes em correspondência.</h2>
@@ -30,15 +28,18 @@
             </tr>
             <% for (Users u : user) {%>
             <tr>
-                <td><%= u.getName()%></td>
+            <form action="teste.jsp">
+                <td><input type="text" name="nomeHome" value="<%=u.getName()%>" readonly/></td>
                 <td><%= 100.0 * u.getUserLastGrade()%>%</td>
                 <td><%= 100.0 * u.getUserGradeAverage()%>%</td>
-            </tr>
-            <%}%>
-        </table>
-        <hr/>
-        <a href="teste.jsp">
-            <button>Iniciar Teste</button>
-        </a>
-    </body>
+                <td><input type="submit" value="Iniciar Teste"/></td>
+            </form>
+        </tr>
+        <%}%>
+    </table>
+    <hr/>
+    <a href="teste.jsp">
+        <button>Iniciar Teste</button>
+    </a>
+</body>
 </html>

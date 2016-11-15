@@ -33,11 +33,15 @@
         <form>
             <%ArrayList<Question> teste = Quiz.getTeste();%>
             <%ArrayList<Users> user = Quiz.getUser();%>
-            <select name="nome" size="2" required>
+            <label for="nomeHome">Usuario:</label><input type="text" name="nome" value="<%=request.getParameter("nomeHome")%>" readonly/>
+            <%--
+                <label for="selectUser">Usuario</label>
+            <select name="nome" size="2" id="selectUser" required>
                 <%for (Users u : user) {%>
                 <option value="<%= u.getName()%>"><%= u.getName()%></option>
                 <%}%>
             </select>
+            --%>
             <%for(Question q: teste){%>
             <h4><%= q.getQuestao()%></h4>
                 <%for(String alternative: q.getAlternativas()){%>
