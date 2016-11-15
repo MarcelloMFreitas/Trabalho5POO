@@ -1,0 +1,45 @@
+@font-face{
+    font-family: 'Indie Flower';
+    src: url(../fonts/Indie_Flower/IndieFlower.ttf);
+}
+
+@font-face{
+    font-family: 'Permanent Marker';
+    src: url(../fonts/Permanent_Marker/PermanentMarker.ttf);
+}
+
+html, body{
+    height: 100%;
+    margin: 0 !important;
+}
+
+body{
+    background-image: url(../img/b-g.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+h1{
+    font-family: 'Permanent Marker';
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h1 a{
+    color: #FFF;
+}
+
+h1 a:hover, h1 a:active{
+    color: #CCC;
+    text-decoration: none;
+}
+
+h2{
+    text-align: center;
+}
+
+.btn{
+    font-family: 'Permanent Marker';
+    font-size: 20px;
+}
