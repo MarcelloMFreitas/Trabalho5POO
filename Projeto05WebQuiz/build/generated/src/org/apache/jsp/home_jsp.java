@@ -44,8 +44,6 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\n");
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
@@ -53,21 +51,32 @@ public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>Índice: WebQuiz</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <h1>WebQuiz</h1>\n");
-      out.write("        <h2>Resultados</h2>\n");
+      out.write("        <h1> Praticando Regra de Três Simples</h1>\n");
+      out.write("        <h2>Regra de três simples é um processo prático para resolver problemas que envolvam quatro valores dos quais conhecemos três deles. </h2>\n");
+      out.write("        \n");
+      out.write("        <h2>Devemos, portanto, determinar um valor a partir dos três já conhecidos.</h2>\n");
+      out.write("         \n");
+      out.write("        <h2>Passos utilizados numa regra de três simples:</h2>\n");
+      out.write("        <h2> 1º) Construir uma tabela, agrupando as grandezas da mesma espécie em colunas</h2>\n");
+      out.write("        <h2>e mantendo na mesma linha as grandezas de espécies diferentes em correspondência.</h2>\n");
+      out.write("        <h2> 2º) Identificar se as grandezas são diretamente ou inversamente proporcionais.</h2>\n");
+      out.write("        <h2>3º) Montar a proporção e resolver a equação.</h2>\n");
+      out.write("        <h2>Vamos Praticar!!</h2>\n");
       out.write("        <hr/>\n");
-      out.write("        <h3>Nome:</h3>\n");
-      out.write("        ");
-      out.write("\n");
+      out.write("        <h3>Última nota:</h3>\n");
+      out.write("       ");
+      out.print( 100.0*Quiz.getLastGrade() );
+      out.write("%\n");
       out.write("        <h3>Média</h3>\n");
       out.write("        ");
-      out.write("\n");
+      out.print( 100.0*Quiz.getGradeAverage() );
+      out.write("%\n");
       out.write("        <hr/>\n");
       out.write("        <a href=\"teste.jsp\">\n");
       out.write("            <button>Iniciar Teste</button>\n");
       out.write("        </a>\n");
       out.write("    </body>\n");
-      out.write("</html>");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
