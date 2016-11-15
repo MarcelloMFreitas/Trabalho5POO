@@ -1,17 +1,18 @@
+<%@page import="com.projeto05.quiz.Users"%>
 <%@page import="com.projeto05.quiz.Quiz"%>
 <%@page import="com.projeto05.quiz.Question"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-    if(request.getParameter("teste")!=null){
+    if (request.getParameter("teste") != null) {
         Quiz.validateTest(new String[]{
             request.getParameter("0"),
             request.getParameter("1"),
             request.getParameter("2"),
             request.getParameter("3")
-        });
-        response.sendRedirect("index.jsp");
+        }, request.getParameter("nome"));
+        response.sendRedirect("home.jsp");
     }
 %>
 <html>
@@ -25,12 +26,18 @@
         <hr/>
         <form>
             <%ArrayList<Question> test = Quiz.getTest();%>
-            <%for(Question q: test){%>
-            <h4><%= q.getQuestion() %></h4>
-                <%for(String alternative: q.getAlternatives()){%>
-                <input type="radio" name="<%=test.indexOf(q)%>"
-                       value="<%=alternative%>"/><%=alternative%>
+            <%ArrayList<Users> user = Quiz.getUser();%>
+            <select name="nome" size="2" required>
+                <%for (Users u : user) {%>
+                <option value="<%= u.getName()%>"><%= u.getName()%></option>
                 <%}%>
+            </select>
+            <%for (Question q : test) {%>
+            <h4><%= q.getQuestion()%></h4>
+            <%for (String alternative : q.getAlternatives()) {%>
+            <input type="radio" name="<%=test.indexOf(q)%>"
+                   value="<%=alternative%>"/><%=alternative%>
+            <%}%>
             <hr/>
             <%}%>
             <input type="submit" name="teste" value="Concluir"/>

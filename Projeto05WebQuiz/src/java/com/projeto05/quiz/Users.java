@@ -1,6 +1,7 @@
 package com.projeto05.quiz;
 
 public class Users {
+
     private String name;
     private int userTestsCount;
     private double userTestsGradeSum;
@@ -50,4 +51,3 @@ public class Users {
     }
 
 }
-

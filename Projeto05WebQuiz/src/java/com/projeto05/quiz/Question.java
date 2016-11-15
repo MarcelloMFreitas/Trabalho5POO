@@ -1,6 +1,7 @@
 package com.projeto05.quiz;
 
 public class Question {
+
     private String question;
     private String answer;
     private String[] alternatives;
@@ -34,5 +35,5 @@ public class Question {
     public void setAnswer(String answer) {
         this.answer = answer;
     }
-    
+
 }

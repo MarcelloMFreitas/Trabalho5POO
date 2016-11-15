@@ -13,17 +13,21 @@
         <h1>WebQuiz</h1>
         <h2>Resultados</h2>
         <hr/>
-        <h3>Nome:</h3>
-        <%= user.get(0).getName() %>
-        <%-- criar lista com os nomes de quem respondeu --%>
-        <h3>Média</h3>
-        <h3>Última nota:</h3>
-        <%= 100.0*user.get(0).getUserLastGrade() %>%
-        <h3>Média</h3>
-        <%= 100.0*user.get(0).getUserGradeAverage() %>%
-        <hr/>
-        <%-- criar media do aluno --%>
-        <hr/>
+        <table>
+            <tr>
+                <th>NOME</th>
+                <th>ULTIMA NOTA</th>
+                <th>MEDIA</th>
+            </tr>
+            <% for (Users u : user) {%>
+            <tr>
+                <td><%= u.getName()%></td>
+                <td><%= 100.0 * u.getUserLastGrade()%>%</td>
+                <td><%= 100.0 * u.getUserGradeAverage()%>%</td>
+            </tr>
+            <%}%>
+        </table>
+
         <a href="teste.jsp">
             <button>Iniciar Teste</button>
         </a>
