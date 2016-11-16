@@ -23,7 +23,7 @@
     </tr>
     <% for (Users u : user) {%>
     <tr>
-    <form action="teste.jsp">
+    <form action="teste.jsp" method="Post">
         <td><input type="text" name="nomeHome" class="form-control" value="<%=u.getName()%>" readonly/></td>
         <td><%= 100.0 * u.getUserLastGrade()%>%</td>
         <td><%= 100.0 * u.getUserGradeAverage()%>%</td>

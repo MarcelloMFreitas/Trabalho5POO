@@ -11,12 +11,16 @@ public class Quiz {
     public static ArrayList<Users> getUser() {
         if (user == null) {
             user = new ArrayList();
-            Users u0 = new Users("User1", 0, 0, 0);
-            Users u1 = new Users("User2", 0, 0, 0);
-            Users u2 = new Users("User3", 0, 0, 0);
+            Users u0 = new Users("Leonardo da Vinci", 0, 0, 0);
+            Users u1 = new Users("Isaac Newton", 0, 0, 0);
+            Users u2 = new Users("Charles Darwin", 0, 0, 0);
+            Users u3 = new Users("Nikola Tesla", 0, 0, 0);
+            Users u4 = new Users("Albert Einstein", 0, 0, 0);
             user.add(u0);
             user.add(u1);
             user.add(u2);
+            user.add(u3);
+            user.add(u4);
         }
         return user;
     }
