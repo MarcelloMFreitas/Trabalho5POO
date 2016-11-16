@@ -1,3 +1,4 @@
+<%@page import="com.projeto05.quiz.Users"%>
 <%@page import="com.projeto05.quiz.Quiz"%>
 <%@page import="com.projeto05.quiz.Question"%>
 <%@page import="java.util.ArrayList"%>
@@ -15,14 +16,15 @@
             request.getParameter("7"),
             request.getParameter("8"),
             request.getParameter("9")
-
-        });
+        }, request.getParameter("nome"));
         response.sendRedirect("home.jsp");
     }
 %>
 <%@include file="WEB-INF/jspf/header.jspf" %>
-<form>
+<form class="form-inline">
     <%ArrayList<Question> teste = Quiz.getTeste();%>
+    <label for="nomeHome">Usuario:</label>
+    <input type="text" name="nome" value="<%=request.getParameter("nomeHome")%>" readonly/>
     <%for (Question q : teste) {%>
     <h4><%= q.getQuestao()%></h4>
     <%for (String alternative : q.getAlternativas()) {%>
